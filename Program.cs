@@ -1,4 +1,5 @@
 using APBD_cw8_s29640.Data;
+using APBD_cw8_s29640.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,8 @@ builder.Services.AddDbContext<LibraryDbContext>(options =>
         builder.Configuration.GetConnectionString("DefaultConnection")
     )
 );
+
+builder.Services.AddScoped<IBorrowingService, BorrowingService>();
 
 var app = builder.Build();
 
