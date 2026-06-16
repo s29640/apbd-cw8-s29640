@@ -20,6 +20,8 @@ namespace APBD_cw8_s29640.Data
             DbAuthors.Configure(modelBuilder);
             DbBooks.Configure(modelBuilder);
             DbBorrowings.Configure(modelBuilder);
+
+            DbSeed.Data(modelBuilder);
         }
 
     }
