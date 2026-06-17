@@ -1,0 +1,36 @@
+﻿@model APBD_cw8_s29640.ViewModels.CreateBorrowingViewModel
+
+@{
+    ViewData["Title"] = "Create borrowing";
+}
+
+<h1>Create borrowing</h1>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group mb-3">
+        <label asp-for="BookId" class="control-label">Book</label>
+        <select asp-for="BookId" class="form-control" asp-items="ViewBag.BookId">
+            <option value="">-- choose book --</option>
+        </select>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="BorrowerName" class="control-label">Borrower name</label>
+        <input asp-for="BorrowerName" class="form-control" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="BorrowedAt" class="control-label">Borrowed at</label>
+        <input asp-for="BorrowedAt" class="form-control" type="datetime-local" />
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="ReturnedAt" class="control-label">Returned at</label>
+        <input asp-for="ReturnedAt" class="form-control" type="datetime-local" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-controller="Books" asp-action="Index" class="btn btn-secondary">Back</a>
+</form>

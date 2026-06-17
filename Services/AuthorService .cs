@@ -15,11 +15,12 @@ namespace APBD_cw8_s29640.Services
 
         public async Task<List<Author>> GetAllAuthorsAsync()
         {
-            return await _context
-                .Authors
+            return await _context.Authors
+                .Include(a => a.Books)
                 .OrderBy(a => a.LastName)
                 .ThenBy(a => a.FirstName)
                 .ToListAsync();
         }
+
     }
 }
