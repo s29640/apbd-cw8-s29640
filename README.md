@@ -40,7 +40,7 @@ dotnet build
 4. Uruchom aplikację:
 
 ```bash
-dotnet run --launch-profile https
+dotnet run
 ```
 
 5. Otwórz przeglądarkę i przejdź pod adres wyświetlony przez aplikację (domyślnie `https://localhost:7195`).
